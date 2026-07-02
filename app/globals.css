@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* پس‌زمینه خاکستری خیلی روشن */
+  background-color: #f5f6f8;
+  color: #1e293b;
+}
+
+/* اعداد لاتین در ورودی‌ها هم راست‌چین خوانده شوند */
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-accent-600 text-white hover:bg-accent-700;
+  }
+  .btn-brand {
+    @apply btn bg-brand-700 text-white hover:bg-brand-800;
+  }
+  .btn-outline {
+    @apply btn border border-slate-300 bg-white text-brand-700 hover:bg-slate-50;
+  }
+  .btn-disabled {
+    @apply btn bg-slate-200 text-slate-500 cursor-not-allowed;
+  }
+  .card {
+    @apply rounded-xl border border-slate-200 bg-white shadow-sm;
+  }
+  .input {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-accent-600 focus:ring-1 focus:ring-accent-600;
+  }
+  .label {
+    @apply mb-1 block text-sm font-medium text-slate-700;
+  }
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+  .container-tk {
+    @apply mx-auto w-full max-w-6xl px-4;
+  }
+}

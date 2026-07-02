@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm -v)",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(npx next *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git -c user.name=tavakolistudio -c user.email=tavakolipix@gmail.com commit -q -m 'feat: TurkiyeKala MVP — خرید از ترکیه، تحویل در ایران *)",
+      "Bash(git branch *)",
+      "Bash(git remote *)"
+    ]
+  }
+}
