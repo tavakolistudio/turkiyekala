@@ -239,6 +239,8 @@ create index if not exists status_logs_order_idx on order_status_logs(order_id);
 create or replace function log_order_status_change()
 returns trigger
 language plpgsql
+security definer
+set search_path = public
 as $$
 begin
   if (tg_op = 'INSERT') then
