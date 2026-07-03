@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   title: "TurkiyeKala — خرید از ترکیه، تحویل در ایران",
   description:
     "لینک محصول را بفرستید یا از پیشنهادهای تخفیف‌دار انتخاب کنید؛ ما خرید، ارسال تا تهران و پیگیری سفارش را انجام می‌دهیم.",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({

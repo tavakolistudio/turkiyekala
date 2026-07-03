@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
@@ -43,7 +44,13 @@ export default function AdminSidebar({ email }: { email: string }) {
       >
         <div className="hidden border-b border-slate-800 p-5 md:block">
           <Link href="/admin" className="flex items-center gap-2 font-bold text-white">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-brand-700">TK</span>
+            <Image
+              src="/logo.png"
+              alt="TurkiyeKala"
+              width={32}
+              height={32}
+              className="h-8 w-8 rounded-lg object-contain"
+            />
             پنل مدیریت
           </Link>
         </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const NAV = [
@@ -18,9 +19,14 @@ export default function Header() {
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
       <div className="container-tk flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2 font-bold text-brand-700">
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-brand-700 text-white">
-            TK
-          </span>
+          <Image
+            src="/logo.png"
+            alt="TurkiyeKala"
+            width={36}
+            height={36}
+            className="h-9 w-9 rounded-lg object-contain"
+            priority
+          />
           <span>TurkiyeKala</span>
         </Link>
 

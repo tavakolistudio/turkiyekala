@@ -14,3 +14,9 @@ next-env.d.ts
 
 # Claude Code local settings (may contain secrets)
 .claude/settings.local.json
+
+# macOS AppleDouble metadata
+._*
+
+# graphify generated artifacts
+/graphify-out

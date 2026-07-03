@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 
@@ -30,9 +31,14 @@ export default function AdminLoginPage() {
     <div className="grid min-h-screen place-items-center bg-brand-900 p-4">
       <form onSubmit={onSubmit} className="w-full max-w-sm rounded-xl bg-white p-8 shadow-lg">
         <div className="mb-6 text-center">
-          <div className="mx-auto mb-3 grid h-12 w-12 place-items-center rounded-xl bg-brand-700 font-bold text-white">
-            TK
-          </div>
+          <Image
+            src="/logo.png"
+            alt="TurkiyeKala"
+            width={56}
+            height={56}
+            className="mx-auto mb-3 h-14 w-14 rounded-xl object-contain"
+            priority
+          />
           <h1 className="text-lg font-bold text-slate-800">ورود به پنل مدیریت</h1>
           <p className="text-sm text-slate-500">TurkiyeKala</p>
         </div>

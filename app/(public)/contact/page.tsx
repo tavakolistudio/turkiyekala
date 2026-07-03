@@ -1,12 +1,10 @@
+import { CONTACT } from "@/lib/contact";
+
 export const metadata = {
   title: "تماس با ما | TurkiyeKala",
 };
 
 export default function ContactPage() {
-  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP || "";
-  const instagram = process.env.NEXT_PUBLIC_INSTAGRAM || "";
-  const telegram = process.env.NEXT_PUBLIC_TELEGRAM || "";
-
   return (
     <div className="container-tk py-10">
       <div className="mx-auto max-w-3xl">
@@ -18,19 +16,19 @@ export default function ContactPage() {
 
         <div className="grid gap-4 sm:grid-cols-3">
           <ContactCard
-            title="واتساپ"
-            value={whatsapp || "به‌زودی"}
-            href={whatsapp ? `https://wa.me/${whatsapp.replace(/[^\d]/g, "")}` : undefined}
+            title="واتساپ (سفارش)"
+            value={CONTACT.whatsappNumber}
+            href={CONTACT.whatsappLink}
           />
           <ContactCard
             title="اینستاگرام"
-            value={instagram ? "@" + instagram : "به‌زودی"}
-            href={instagram ? `https://instagram.com/${instagram}` : undefined}
+            value={"@" + CONTACT.instagramHandle}
+            href={CONTACT.instagramLink}
           />
           <ContactCard
             title="تلگرام"
-            value={telegram ? "@" + telegram : "به‌زودی"}
-            href={telegram ? `https://t.me/${telegram}` : undefined}
+            value={"@" + CONTACT.telegramHandle}
+            href={CONTACT.telegramLink}
           />
         </div>
 
