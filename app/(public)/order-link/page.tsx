@@ -2,7 +2,10 @@ import OrderForm from "@/components/forms/OrderForm";
 import { PRICE_INCLUDES_TEXT } from "@/lib/constants";
 
 export const metadata = {
-  title: "ثبت سفارش با لینک | TurkiyeKala",
+  title: "ثبت سفارش با لینک",
+  description:
+    "لینک محصول موردنظر از فروشگاه‌های ترکیه را بفرستید تا خرید، ارسال تا تهران و پیگیری سفارش را برایتان انجام دهیم.",
+  alternates: { canonical: "/order-link" },
 };
 
 export default function OrderLinkPage() {

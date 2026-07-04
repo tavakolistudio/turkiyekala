@@ -1,5 +1,8 @@
 export const metadata = {
-  title: "قوانین خرید و ارسال | TurkiyeKala",
+  title: "قوانین خرید و ارسال",
+  description:
+    "قوانین و شرایط خرید از ترکیه و ارسال به ایران: نحوه محاسبه قیمت، هزینه ارسال، زمان تحویل و شرایط بازگشت وجه.",
+  alternates: { canonical: "/rules" },
 };
 
 const PARAGRAPHS = [

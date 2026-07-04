@@ -5,8 +5,35 @@ import { getProductBySlug, getSettings } from "@/lib/data";
 import { calculateProductPrice, formatToman, formatTry } from "@/lib/pricing";
 import { PRICE_INCLUDES_TEXT, ESTIMATE_NOTE_TEXT } from "@/lib/constants";
 import { PRODUCT_STATUS_LABELS } from "@/lib/types";
+import { SITE_URL } from "@/lib/site";
+import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const product = await getProductBySlug(slug);
+  if (!product) return { title: "محصول یافت نشد" };
+
+  const description =
+    product.description?.slice(0, 160) ||
+    `${product.title} — سفارش از ترکیه با تحویل در تهران. قیمت شامل خرید و ارسال تا تهران.`;
+
+  return {
+    title: product.title,
+    description,
+    alternates: { canonical: `/products/${slug}` },
+    openGraph: {
+      title: product.title,
+      description,
+      images: product.images?.[0] ? [{ url: product.images[0] }] : undefined,
+    },
+  };
+}
 
 export default async function ProductDetailPage({
   params,
@@ -26,8 +53,30 @@ export default async function ProductDetailPage({
   const priceToman = settings ? calculateProductPrice(product, settings) : null;
   const priceLabel = isFixed ? "قیمت نهایی تحویل تهران" : "قیمت حدودی تحویل تهران";
 
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.title,
+    description: product.description || undefined,
+    image: product.images?.length ? product.images : undefined,
+    url: `${SITE_URL}/products/${slug}`,
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "IRR",
+      price: priceToman != null ? priceToman * 10 : undefined,
+      availability:
+        product.status === "out_of_stock"
+          ? "https://schema.org/OutOfStock"
+          : "https://schema.org/InStock",
+    },
+  };
+
   return (
     <div className="container-tk py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
       <div className="grid gap-8 lg:grid-cols-2">
         <div>
           <div className="card aspect-square overflow-hidden bg-slate-100">
@@ -45,7 +94,7 @@ export default async function ProductDetailPage({
                 <img
                   key={i}
                   src={img}
-                  alt=""
+                  alt={`${product.title} — تصویر ${i + 1}`}
                   className="aspect-square w-full rounded-lg border border-slate-200 object-cover"
                 />
               ))}

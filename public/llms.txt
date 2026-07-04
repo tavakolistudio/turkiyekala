@@ -1,0 +1,22 @@
+# TurkiyeKala
+
+> واسط خرید از ترکیه و تحویل در ایران. کاربر لینک محصول را می‌فرستد یا از پیشنهادهای تخفیف‌دار انتخاب می‌کند؛ TurkiyeKala خرید، ارسال تا تهران و پیگیری سفارش را انجام می‌دهد.
+> TurkiyeKala is a buying proxy service: users send a product link or pick from curated discounted offers, and we handle purchase in Turkey, shipping to Tehran, and order tracking.
+
+## قیمت‌گذاری (Pricing)
+- مبلغ نمایش‌داده‌شده شامل خرید کالا از ترکیه، تبدیل و انتقال وجه، و ارسال از ترکیه تا تهران است.
+- هزینه ارسال داخل ایران جداگانه و بر عهده خریدار است.
+- قیمت نهایی پس از بررسی موجودی، وزن و قیمت روز فروشنده تأیید می‌شود.
+
+## صفحات اصلی (Main pages)
+- [خانه / Home](https://turkiyekala.vercel.app/): معرفی خدمات و ماشین‌حساب تخمین قیمت.
+- [Shopping](https://turkiyekala.vercel.app/shopping): محصولات آماده با قیمت تخمینی.
+- [محصولات / Products](https://turkiyekala.vercel.app/products): فهرست محصولات پیشنهادی.
+- [ثبت سفارش با لینک / Order by link](https://turkiyekala.vercel.app/order-link): ارسال لینک محصول برای سفارش.
+- [پیگیری سفارش / Track order](https://turkiyekala.vercel.app/track): پیگیری وضعیت سفارش.
+- [سوالات پرتکرار / FAQ](https://turkiyekala.vercel.app/faq): پرسش‌های رایج.
+- [قوانین / Rules](https://turkiyekala.vercel.app/rules): قوانین و شرایط خرید.
+- [تماس / Contact](https://turkiyekala.vercel.app/contact): راه‌های ارتباطی و پشتیبانی.
+
+## تماس (Contact)
+- سفارش‌ها و پشتیبانی از طریق واتساپ، اینستاگرام و تلگرام انجام می‌شود (لینک‌ها در صفحه تماس).

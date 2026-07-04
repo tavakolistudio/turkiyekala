@@ -5,7 +5,10 @@ import { calculateShoppingEstimatedPrice } from "@/lib/pricing";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Shopping — پیشنهادهای تخفیف‌دار | TurkiyeKala",
+  title: "Shopping — پیشنهادهای تخفیف‌دار",
+  description:
+    "محصولات منتخب و تخفیف‌دار از فروشگاه‌های ترکیه با قیمت تخمینی شامل خرید و ارسال تا تهران. سفارش سریع و آسان.",
+  alternates: { canonical: "/shopping" },
 };
 
 export default async function ShoppingPage() {

@@ -5,7 +5,10 @@ import { calculateProductPrice } from "@/lib/pricing";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "محصولات آماده | TurkiyeKala",
+  title: "محصولات آماده",
+  description:
+    "فهرست محصولات آماده سفارش از ترکیه با قیمت تخمینی شامل خرید و ارسال تا تهران. جست‌وجو و انتخاب آسان.",
+  alternates: { canonical: "/products" },
 };
 
 export default async function ProductsPage() {

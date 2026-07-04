@@ -1,7 +1,10 @@
 import TrackForm from "@/components/forms/TrackForm";
 
 export const metadata = {
-  title: "پیگیری سفارش | TurkiyeKala",
+  title: "پیگیری سفارش",
+  description:
+    "وضعیت سفارش خود را با کد پیگیری دنبال کنید؛ از ثبت سفارش تا خرید از ترکیه، ارسال و تحویل در ایران.",
+  alternates: { canonical: "/track" },
 };
 
 export default async function TrackPage({

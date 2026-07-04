@@ -1,7 +1,10 @@
 import { CONTACT } from "@/lib/contact";
 
 export const metadata = {
-  title: "تماس با ما | TurkiyeKala",
+  title: "تماس با ما",
+  description:
+    "راه‌های ارتباط با TurkiyeKala از طریق واتساپ، اینستاگرام و تلگرام برای ثبت سفارش، مشاوره و پشتیبانی خرید از ترکیه.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
