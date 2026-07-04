@@ -1,4 +1,5 @@
-import FAQAccordion, { type FAQItem } from "@/components/FAQAccordion";
+import FAQAccordion from "@/components/FAQAccordion";
+import { FAQ_ITEMS, faqJsonLd } from "@/lib/faq";
 
 export const metadata = {
   title: "سوالات پرتکرار",
@@ -7,52 +8,16 @@ export const metadata = {
   alternates: { canonical: "/faq" },
 };
 
-const FAQ: FAQItem[] = [
-  {
-    q: "آیا هزینه ارسال داخل ایران در قیمت سایت حساب شده؟",
-    a: "خیر. مبلغ سایت شامل خرید کالا و ارسال تا تهران است. هزینه ارسال داخل ایران جداگانه با خریدار است.",
-  },
-  {
-    q: "نرخ تبدیل لیر چطور محاسبه می‌شود؟",
-    a: "نرخ سایت بر اساس نرخ روز، هزینه تبدیل، انتقال وجه و نوسان بازار محاسبه می‌شود و ممکن است با نرخ صرافی متفاوت باشد.",
-  },
-  {
-    q: "اگر کالا ناموجود شود چه می‌شود؟",
-    a: "مبلغ بازگردانده می‌شود یا با تأیید مشتری، محصول جایگزین خریداری می‌شود.",
-  },
-  {
-    q: "چقدر طول می‌کشد سفارش برسد؟",
-    a: "زمان تحویل بسته به سایت فروشنده، آماده‌سازی، باربری و ارسال داخل ایران متغیر است.",
-  },
-  {
-    q: "آیا مرجوعی وجود دارد؟",
-    a: "مرجوعی فقط طبق شرایط هر محصول و قبل از خرید قطعی از ترکیه امکان‌پذیر است. بعد از خرید کالا، لغو یا تعویض فقط در شرایط خاص و با هماهنگی انجام می‌شود.",
-  },
-];
-
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: FAQ.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.a,
-    },
-  })),
-};
-
 export default function FAQPage() {
   return (
     <div className="container-tk py-10">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd()) }}
       />
       <div className="mx-auto max-w-3xl">
         <h1 className="mb-6 text-2xl font-bold text-brand-700">سوالات پرتکرار</h1>
-        <FAQAccordion items={FAQ} />
+        <FAQAccordion items={FAQ_ITEMS} />
       </div>
     </div>
   );
