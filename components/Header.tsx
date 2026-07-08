@@ -22,9 +22,9 @@ export default function Header() {
           <Image
             src="/logo.png"
             alt="TurkiyeKala"
-            width={36}
-            height={36}
-            className="h-9 w-9 rounded-lg object-contain"
+            width={44}
+            height={44}
+            className="h-11 w-11 rounded-lg object-contain"
             priority
           />
           <span>TurkiyeKala</span>
